@@ -18,4 +18,9 @@ public class InputDataServiceImplementation implements InputDataService {
     public List<ServiceInput> getListByService(String serviceName) {
         return serviceInputRepository.findAllByServiceName(serviceName);
     }
+
+    @Override
+    public ServiceInput createInput(ServiceInput input) {
+        return serviceInputRepository.save(input);
+    }
 }
